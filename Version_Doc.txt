@@ -1,0 +1,4 @@
+basic-miktex-25.12-x64.exe
+
+Perl commands:
+kanji-config-updmap-sys --jis2004 haranoaji

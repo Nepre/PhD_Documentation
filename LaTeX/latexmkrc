@@ -1,0 +1,5 @@
+$latex = 'uplatex %O %S';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$biber = 'biber %O %S';
+$pdf_mode = 3;
+$out_dir = 'build';

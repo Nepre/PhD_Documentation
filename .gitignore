@@ -1,0 +1,18 @@
+# latexmk / MiKTeX output
+build/
+
+# Leftovers from builds run in the source folder
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.dvi
+*.bbl
+*.bcf
+*.bcf-SAVE-ERROR
+*.bbl-SAVE-ERROR
+*.run.xml
+*.synctex.gz
