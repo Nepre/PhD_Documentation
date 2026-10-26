@@ -22,9 +22,9 @@ We're going to follow the example by Prof. Chris Clack, at least on this first r
 
 Example of the existing limitations: <https://www.youtube.com/watch?v=Y3rM49Z6gas>
 
-![Holes on the ground (height comparison)](Images\Holes1.png)
+![Holes on the ground (height comparison)](Images/Holes1.png)
 
-![Holes on the ground (stamp showcase)](Images\Holes2.png)
+![Holes on the ground (stamp showcase)](Images/Holes2.png)
 
 The wholes on the ground are made via a stamp, so we can see the the pattern on the ground.
 
