@@ -147,3 +147,19 @@ The idea is to finish all the targets that we have, but this will be the section
 ### Appendix
 
    - Data Structures, System & Pipeline 
+
+notes
+
+High-Perfomance Graphics (read papers)
+
+- Data structure / data processing algorithm
+
+- Theme for the first and second paper
+
+- What can artist do using the system
+
+Prepare for the presentation
+
+More complete plan (novelty, effectiveness and usefullnes)
+
+Generic data structure to represent any material based on standards
