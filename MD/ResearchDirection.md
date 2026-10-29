@@ -36,7 +36,13 @@ The wholes on the ground are made via a stamp, so we can see the the pattern on 
 
 - Saving large textures (high memory cost) that cover the world at a reasonable pixel density.
 
+  - 1km2 at 1 pixel per 10 cm = 10,000 x 10,000 pixel texture
+
 - The more layers, the more memory cost.
+
+  - 10k texture @ 16 bit = 200MB
+
+  - 4 layers = 1600MB
 
 - Handling large amount of requests require compute power.
 
@@ -57,6 +63,8 @@ We are going to focus on:
 - Simulated
 
 - Volume keeping
+
+- Water bodies
 
 *In consideration*
 
