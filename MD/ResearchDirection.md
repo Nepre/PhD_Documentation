@@ -162,4 +162,6 @@ Prepare for the presentation
 
 More complete plan (novelty, effectiveness and usefullnes)
 
-Generic data structure to represent any material based on standards
+- Generic data structure to represent any material based on standards
+
+- Using distance based scaling for memory saving (ground truth on disk)
