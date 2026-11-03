@@ -1,4 +1,4 @@
-# Research Direction
+Research Direction
 
 ## Parts of a PhD dissertation
 
@@ -12,18 +12,16 @@ We're going to follow the example by Prof. Chris Clack, at least on this first r
 
 > Set the scene and *problem statement*. Introduce structure of thesis, state contributions (3-5).
 
-#### Limitations \& Contributions 
+#### Limitations & Contributions
 
 | Limitation of existing systems | Provisional Contribution |
-| -------- | -------- |
-| Shallow ~1m deep | 3~4m deep |
-| 1 layer | 3~4 Material Layer |
+| --- | --- |
+| Shallow \~1m deep | 3\~4m deep |
+| 1 layer | 3\~4 Material Layer |
 | Struggles with large amount of requests | Request spacing & large amount handling |
 | Transient deformation | Persistent Deformation |
 
-
 #### Visual example:
-
 
 Example of the existing limitations: <https://www.youtube.com/watch?v=Y3rM49Z6gas>
 
@@ -32,6 +30,7 @@ Example of the existing limitations: <https://www.youtube.com/watch?v=Y3rM49Z6ga
 ![Holes on the ground (stamp showcase)](Images/Holes2.png)
 
 The wholes on the ground are made via a stamp, so we can see the the pattern on the ground.
+
 #### Expected challenges:
 
 - Saving large textures (high memory cost) that cover the world at a reasonable pixel density.
@@ -48,10 +47,9 @@ The wholes on the ground are made via a stamp, so we can see the the pattern on 
 
 #### Scope and out-of-scope
 
-There are many options that can bring this system to a tipping point in terms of scale. 
+There are many options that can bring this system to a tipping point in terms of scale.
 
-We are going to focus on:
-*In scope:*
+We are going to focus on: *In scope:*
 
 - Open Worlds (\~1km2 )
 - 3\~4 Material Layers
@@ -146,11 +144,11 @@ The idea is to finish all the targets that we have, but this will be the section
 
 ### Appendix
 
-   - Data Structures, System & Pipeline 
+- Data Structures, System & Pipeline
 
 notes
 
-High-Perfomance Graphics (read papers)
+High-performance Graphics (read papers)
 
 - Data structure / data processing algorithm
 
@@ -160,7 +158,7 @@ High-Perfomance Graphics (read papers)
 
 Prepare for the presentation
 
-More complete plan (novelty, effectiveness and usefullnes)
+More complete plan (novelty, effectiveness and usefulness)
 
 - Generic data structure to represent any material based on standards
 
