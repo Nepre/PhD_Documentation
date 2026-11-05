@@ -163,3 +163,28 @@ More complete plan (novelty, effectiveness and usefulness)
 - Generic data structure to represent any material based on standards
 
 - Using distance based scaling for memory saving (ground truth on disk)
+
+- Have a material "z buffer" that checks wether we need to write much information on a certain layer pixel.
+
+  - So that we don't have to process the lower layers if we're not using them
+
+Focus on the papers to publish
+
+### Possible Papers
+
+#### Multi - Layer Material Interaction
+
+The main research plan. How to showcase the different material interactions on an open world, have different layers of material and different types of interaction and see how they behave.
+
+\
+Add different properties to the materials and see how those affect the final result.
+
+### Real material data to Material Layer
+
+See how we can implement real world data (Sinkage exponent, density, modulus, fracture energy...) and how we can make use of these parameters to approximate on our model.
+
+Perhaps use neural networks to give inputs, outputs and properties, and then use that data to train it for other styles of materials. This can be done through real simulations vs our real-time approximation.
+
+### Layer aware LOD encoding
+
+Develop an algorythm with chunks or write masks that check whether we can skip some of the work on some layers because the deformation information will not hit them, or because the result will not show in the surface.
