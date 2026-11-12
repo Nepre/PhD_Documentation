@@ -3,6 +3,10 @@
 # Potential Academic Papers
 Paper A: Real-time approximations of layered material deformation
 Paper B: Sparse, persistent, multi-resolution data structure & optimization
+Paper A: Real-time approximations of layered material deformation 
+
+Paper B: Sparse, persistent, multi-resolution data structure & optimization 
+
 Paper C: Inferring terrain deformation parameters from high fidelity simulations
 
 ## Working Title
@@ -200,3 +204,40 @@ Quantitative metrics:
 - Calibration time (human vs inferred)
 
 ![Paper C visualization](Images/Paper3.jpg)
+
+
+## Research Question
+### Primary Question
+Can spatial resolution be dynamically reduced while preserving detail responding to system needs?
+
+### Secondary Question
+How well does the system manage material layer combining and parameter merging?
+
+## Hypothesis
+In the distance, layer deformation can be combined, especially with underground layers that haven't been exposed yet.
+
+It will cause some imperfections and inconsistencies compared to separate layers, but it will not be significant enough for the reduced cost to be worth it.
+
+## Proposed Contribution
+An agile data structure, capable of reducing memory and computing usage based on the system needs for terrain deformation.
+
+
+## Evaluation
+Compare the error between:
+- No compression of layers
+- Compression of layers
+- Original high-fidelity model
+
+As well as the performance and memory cost between the two real-time systems.
+
+Comparison scenarios:
+- Single deformations
+- Accumulated deformations
+
+Quantitative metrics (based on the previous one):
+- Surface deformation error
+- Indentation depth
+- Layer-boundary error
+- Interaction with underlying layers
+
+![Paper C visualization](Images/Paper3B.jpg)

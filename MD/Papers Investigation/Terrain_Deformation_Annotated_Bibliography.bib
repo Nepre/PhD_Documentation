@@ -1,0 +1,441 @@
+% Terrain Deformation Research: annotated literature map
+% Search date: 2026-11-06
+% Scope: real-time surface deformation, layered material representations,
+% sparse persistent terrain, and calibration of reduced models.
+% This is a focused literature map, not an exhaustive systematic review.
+% Annotations are review summaries, not copied author abstracts.
+% Timing classifications refer to reported workloads, not a verified 3 ms budget.
+% Paper A: layered real-time deformation. Paper B: sparse persistent architecture.
+% Paper C: parameter inference from high-fidelity numerical references.
+% Foundational and offline references are explicitly labeled.
+% Use journal publication years; annotations note relevant earlier versions.
+
+@article{Onoue2005AnInteractiveDeformation,
+  title = {{An Interactive Deformation System for Granular Material}},
+  author = {Koichi Onoue and Tomoyuki Nishita},
+  year = {2005},
+  journal = {Computer Graphics Forum 24(1), 51–60},
+  doi = {10.1111/j.1467-8659.2005.00828.x},
+  url = {https://diglib.eg.org/items/1d8393a9-11d9-4bd5-bdf2-b24cfa0b5630},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, interactive},
+  annote = {Review classification: interactive. Handles object–granular-ground collision, material displacement and erosion of steep slopes. A Height Span Map supports arbitrary, including concave, object shapes, while texture sliding conveys granular motion.}
+}
+
+@inproceedings{Aquilio2006RealTimeGPU,
+  title = {{Real-Time GPU-Based Simulation of Dynamic Terrain}},
+  author = {Anthony S. Aquilio and Jeremy C. Brooks and Ying Zhu and G. Scott Owen},
+  year = {2006},
+  booktitle = {Advances in Visual Computing, ISVC 2006, LNCS 4291, 891–900},
+  doi = {10.1007/11919476_89},
+  url = {https://link.springer.com/chapter/10.1007/11919476_89},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, real-time claim},
+  annote = {Review classification: real-time claim. Introduces a dynamically displaced height map generated and manipulated on the GPU, demonstrated with vehicles deforming soft terrain. It establishes early GPU heightfield deformation prior art.}
+}
+
+@inproceedings{Holz2009SoilDeformationModels,
+  title = {{Soil Deformation Models for Real-Time Simulation: A Hybrid Approach}},
+  author = {Daniel Holz and Thomas Beer and Torsten Kuhlen},
+  year = {2009},
+  booktitle = {VRIPHYS 2009: Virtual Reality Interactions and Physical Simulations, 21–30},
+  doi = {10.2312/PE/vriphys/vriphys09/021-030},
+  url = {https://diglib.eg.org/server/api/core/bitstreams/b3df8d6e-95b5-4eef-b2d7-c75ed573c314/content},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Combines static heightfield soil with DEM particles for disturbed material, merging particles back after settling. Depth-dependent compaction is stored as linked lists of soil layers at heightfield vertices. Active-region updates restrict computation to relevant terrain.}
+}
+
+@inproceedings{Zhu2011TerramechanicsBasedTerrain,
+  title = {{Terramechanics Based Terrain Deformation for Real-Time Off-Road Vehicle Simulation}},
+  author = {Ying Zhu and Xiao Chen and G. Scott Owen},
+  year = {2011},
+  booktitle = {Advances in Visual Computing, ISVC 2011, LNCS 6938, 431–440},
+  doi = {10.1007/978-3-642-24028-7_40},
+  url = {https://link.springer.com/chapter/10.1007/978-3-642-24028-7_40},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, real-time claim},
+  annote = {Review classification: real-time claim. Modifies terramechanics for visually plausible off-road vehicle terrain deformation. It accounts for vehicle load, velocity, tire size and soil concentration, producing vertical compression and lateral displacement.}
+}
+
+@inproceedings{Chen2013RealTimeSimulation,
+  title = {{Real-Time Simulation of Vehicle Tracks on Soft Terrain}},
+  author = {Xiao Chen and Ying Zhu},
+  year = {2013},
+  booktitle = {Advances in Visual Computing, ISVC 2013, LNCS 8033, 437–447},
+  doi = {10.1007/978-3-642-41914-0_43},
+  url = {https://link.springer.com/chapter/10.1007/978-3-642-41914-0_43},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, real-time claim},
+  annote = {Review classification: real-time claim. Uses modified terramechanics to generate tracks from wheeled and tracked vehicles on soft terrain. The system includes terrain deformation, lateral displacement, tread patterns and debris across materials such as clay, sand and snow.}
+}
+
+@inproceedings{Gilardi2016DriftDiffusionBased,
+  title = {{Drift-Diffusion Based Real-Time Dynamic Terrain Deformation}},
+  author = {Marco Gilardi and Phil L. Watten and Paul Newbury},
+  year = {2016},
+  booktitle = {Eurographics 2016 Short Papers, 45–48},
+  doi = {10.2312/egsh.20161011},
+  url = {https://diglib.eg.org/items/fa4da1ef-6250-4bd7-8c21-a7ecbb4059f5},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Applies modified drift–diffusion equations to a dynamic height texture using DirectX 11 compute shaders, then renders with tessellation. Spatially varying soil parameters and angle-of-repose behavior produce appearance-oriented deformation and material redistribution.}
+}
+
+@article{Zhu2021ShallowSandEquations,
+  title = {{Shallow Sand Equations: Real-Time Height Field Simulation of Dry Granular Flows}},
+  author = {Kuixin Zhu and Xiaowei He and Sheng Li and Hongan Wang and Guoping Wang},
+  year = {2021},
+  journal = {IEEE Transactions on Visualization and Computer Graphics 27(3), 2073–2084; early online 2019},
+  doi = {10.1109/TVCG.2019.2944172},
+  url = {https://peridynamics.com/publications/2019-Zhu-SSE.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Derives a depth-integrated dry-granular-flow model with dense and dilute layers. Heightfield simulation supports rigid-object interaction, with optional tracked particles improving visual richness.}
+}
+
+@inproceedings{Paliard2021SoftWalksRealTime,
+  title = {{SoftWalks: Real-Time, Two-Ways Interaction between a Character and Loose Grounds}},
+  author = {Chloé Paliard and Eduardo Alvarado and Damien Rohmer and Marie-Paule Cani},
+  year = {2021},
+  booktitle = {Eurographics 2021 Short Papers, 41–44},
+  doi = {10.2312/egs.20211019},
+  url = {https://diglib.eg.org/items/ac82a7c3-a3f3-4dc7-a5c6-5ee2bb8a6c41},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, real-time claim},
+  annote = {Review classification: real-time claim. Couples simple procedural footprint and vegetation deformation with inverse-kinematics foot placement and a character balance controller. Deformed ground changes the character’s gait, creating two-way visual interaction.}
+}
+
+@article{Alvarado2022RealTimeLocomotion,
+  title = {{Real-Time Locomotion on Soft Grounds With Dynamic Footprints}},
+  author = {Eduardo Alvarado and Chloé Paliard and Damien Rohmer and Marie-Paule Cani},
+  year = {2022},
+  journal = {Frontiers in Virtual Reality 3, Article 801856},
+  doi = {10.3389/frvir.2022.801856},
+  url = {https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2022.801856/full},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Computes footprint compression and lateral material displacement from character loading and contact motion, using Young’s modulus and Poisson’s ratio. Persistent plastic compression and local heightfield updates feed back into character gait.}
+}
+
+@inproceedings{Su2023RealtimeHeight,
+  title = {{Real-time Height-field Simulation of Sand and Water Mixtures}},
+  author = {Haozhe Su and Siyu Zhang and Zherong Pan and Mridul Aanjaneya and Xifeng Gao and Kui Wu},
+  year = {2023},
+  booktitle = {SIGGRAPH Asia 2023 Conference Papers, Article 65, 1–10},
+  doi = {10.1145/3610548.3618159},
+  url = {https://kuiwuchn.github.io/rtsw.html},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Simulates elastoplastic sand and water mixtures with heightfields, coupling friction, saturation, diffusion and momentum. Semi-implicit splitting and asynchronous sand/water updates provide fast simulation, with comparisons against a volumetric material-point reference.}
+}
+
+@article{Alvarado2024TRAILSimulatingthe,
+  title = {{TRAIL: Simulating the impact of human locomotion on natural landscapes}},
+  author = {Eduardo Alvarado and Oscar Argudo and Damien Rohmer and Marie-Paule Cani and Nuria Pelechano},
+  year = {2024},
+  journal = {The Visual Computer 40, 5029–5041},
+  doi = {10.1007/s00371-024-03506-z},
+  url = {https://link.springer.com/article/10.1007/s00371-024-03506-z},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A, measured real-time},
+  annote = {Review classification: measured real-time. Models accumulated foot traffic through soil compression, displaced material and stabilization, coupled with vegetation bending, damage and recovery. Repeated locomotion produces evolving paths, while vegetation influences terrain resistance.}
+}
+
+@inproceedings{Crause2011ASystemfor,
+  title = {{A System for Real-Time Deformable Terrain}},
+  author = {Justin Crause and Andrew Flower and Patrick Marais},
+  year = {2011},
+  booktitle = {SAICSIT 2011, pp. 77–86},
+  doi = {10.1145/2072221.2072231},
+  url = {https://pubs.cs.uct.ac.za/id/eprint/740/1/p77-crause.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, measured real-time},
+  annote = {Review classification: measured real-time. Stores accumulated deformation in GPU height textures and derivative maps, with coarse/detail representations, geometry clipmaps and preemptive asynchronous tile caching. Fine maps use 3 cm texels. Previously applied deformations persist without retaining an ever-growing render-time stamp list.}
+}
+
+@article{III2011MultiResolutionDeformation,
+  title = {{Multi-Resolution Deformation in Out-of-Core Terrain Rendering}},
+  author = {Brandstetter, III, William E. and Joseph D. Mahsman and Cody J. White and Sergiu M. Dascalu and Harris, Jr., Frederick C.},
+  year = {2011},
+  journal = {International Journal of Computers and Their Applications, 18(4), pp. 263–272},
+  url = {https://www.cse.unr.edu/~fredh/papers/journal/32-mrdiooctr/Galley.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, interactive},
+  annote = {Review classification: interactive. Combines an extendible quadtree, deformation at multiple resolutions and threaded out-of-core loading/writing. Refinement considers both the viewpoint and deformation brushes, allowing offscreen changes. Modified elevation data are saved to disk and restored after restarting the application.}
+}
+
+@inproceedings{He2002RealtimeExtendible,
+  title = {{Real-time Extendible-resolution Display of On-line Dynamic Terrain}},
+  author = {Yefei He and James Cremer and Yiannis Papelis},
+  year = {2002},
+  booktitle = {Graphics Interface 2002, pp. 151–160},
+  url = {https://graphicsinterface.org/wp-content/uploads/gi2002-18.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, measured real-time},
+  annote = {Review classification: measured real-time. Extends ROAM with local hierarchy updates and DEXTER, which adds fine terrain resolution only where online modifications require it. Demonstrates vehicle tracks with substantially smaller geometry hierarchies than allocating the finest resolution everywhere.}
+}
+
+@inproceedings{Leach2014AGPUBased,
+  title = {{A GPU-Based Level of Detail System for the Real-Time Simulation and Rendering of Large-Scale Granular Terrain}},
+  author = {Craig Leach and Patrick Marais},
+  year = {2014},
+  booktitle = {WSCG 2014, Communication Papers},
+  url = {https://pubs.cs.uct.ac.za/id/eprint/943/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, measured real-time},
+  annote = {Review classification: measured real-time. Uses particle-based granular simulation near interacting objects and a heightfield elsewhere. Converts terrain between these representations and writes resulting changes back to the heightfield, preserving deformations while limiting expensive active simulation regions.}
+}
+
+@inproceedings{Chen2007RealTimeVisualization,
+  title = {{Real-Time Visualization of Tire Tracks in Dynamic Terrain with LOD}},
+  author = {Guojun Chen and Jing Zhang and Xiaoli Xu and Yuan Yin},
+  year = {2007},
+  booktitle = {Edutainment 2007, Lecture Notes in Computer Science 4469, pp. 655–666},
+  doi = {10.1007/978-3-540-73011-8_63},
+  url = {https://link.springer.com/chapter/10.1007/978-3-540-73011-8_63},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, real-time claim},
+  annote = {Review classification: real-time claim. Refines a terrain LOD hierarchy around vehicle-modified regions and uses local window scanning to avoid cracks between neighboring terrain cells at different resolutions.}
+}
+
+@article{Wang2014RealtimeMultiresolution,
+  title = {{Real-time Multiresolution Rendering for Dynamic Terrain}},
+  author = {Dong Wang and Qing-sheng Zhu and Yi Xia},
+  year = {2014},
+  journal = {Journal of Software, 9(4), pp. 889–894},
+  doi = {10.4304/jsw.9.4.889-894},
+  url = {https://www.jsoftware.us/vol9/jsw0904-14.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, measured real-time},
+  annote = {Review classification: measured real-time. Projects crater shapes into GPU textures, derives depth offsets, displaces terrain vertices and adaptively tessellates modified regions. Procedural texturing updates the crater appearance on the GPU.}
+}
+
+@article{Losasso2004GeometryClipmapsTerrain,
+  title = {{Geometry Clipmaps: Terrain Rendering Using Nested Regular Grids}},
+  author = {Frank Losasso and Hugues Hoppe},
+  year = {2004},
+  journal = {ACM Transactions on Graphics (SIGGRAPH), 23(3), pp. 769–776},
+  doi = {10.1145/1015706.1015799},
+  url = {https://hhoppe.com/proj/geomclipmap/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, rendering foundation},
+  annote = {Review classification: rendering foundation. Caches terrain in nested viewer-centered regular grids, incrementally refilling them as the camera moves. Unifies geometry detail, smooth transitions, incremental decompression and procedural detail synthesis.}
+}
+
+@article{Cornel2023WatertightIncrementalHeightfield,
+  title = {{Watertight Incremental Heightfield Tessellation}},
+  author = {Daniel Cornel and Silvana Zechmeister and Eduard Gröller and Jürgen Waser},
+  year = {2023},
+  journal = {IEEE Transactions on Visualization and Computer Graphics, 29(9), pp. 3888–3899; early access 2022},
+  doi = {10.1109/TVCG.2022.3173081},
+  url = {https://www.cg.tuwien.ac.at/research/publications/2022/cornel-2022-wih/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, rendering foundation},
+  annote = {Review classification: rendering foundation. Maintains a watertight, view-dependent triangulation of changing heightfields using compute shaders and cached previous-frame results. Targets dynamic flood visualization with controlled refinement work.}
+}
+
+@inproceedings{Nilles2025FastRenderingof,
+  title = {{Fast Rendering of Large-Scale Dynamic Multi-Layered Height Maps}},
+  author = {Alexander Maximilian Nilles and Stefan Müller},
+  year = {2025},
+  booktitle = {Vision, Modeling, and Visualization (VMV) 2025},
+  doi = {10.2312/vmv.20251227},
+  url = {https://diglib.eg.org/items/5d25db78-dbc5-422d-8e61-f67aab3d8f6c},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper B, real-time claim},
+  annote = {Review classification: real-time claim. Builds a hierarchy over volumetric multi-layered height maps for fast box ray tracing and smooth implicit-surface ray marching. Extends the authors' 2024 hydraulic-erosion simulation with an efficient dynamic renderer.}
+}
+
+@article{Hu2024Calibrationofan,
+  title = {{Calibration of an expeditious terramechanics model using a higher-fidelity model, Bayesian inference, and a virtual bevameter test}},
+  author = {Wei Hu and Pei Li and Huzaifa Mustafa Unjhawala and Radu Serban and Dan Negrut},
+  year = {2024},
+  journal = {Journal of Field Robotics 41(3), 550–569 (online publication December 2023)},
+  doi = {10.1002/rob.22276},
+  url = {https://onlinelibrary.wiley.com/doi/full/10.1002/rob.22276},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline calibration},
+  annote = {Review classification: offline calibration. Uses a high-fidelity SPH continuum terrain model to generate virtual bevameter measurements, then Bayesian inference to identify six reduced Soil Contact Model parameters. Validates the calibrated model with single-wheel and full-rover simulations.}
+}
+
+@article{Zhang2025Usinghighfidelity,
+  title = {{Using high fidelity discrete element simulation to calibrate an expeditious terramechanics model in a multibody dynamics framework}},
+  author = {Yuemin Zhang and Junpeng Dai and Wei Hu and Dan Negrut},
+  year = {2025},
+  journal = {Multibody System Dynamics 65, 505–544 (2024 preprint)},
+  doi = {10.1007/s11044-024-10051-z},
+  url = {https://link.springer.com/article/10.1007/s11044-024-10051-z},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline calibration},
+  annote = {Review classification: offline calibration. Generates virtual bevameter data with a high-fidelity discrete-element soil model and calibrates SCM through Bayesian inference. Compares calibrated results against DEM for three wheel geometries and a complete rover.}
+}
+
+@article{Gallina2014ParameterIdentificationof,
+  title = {{Parameter Identification of a Planetary Rover Wheel–Soil Contact Model via a Bayesian Approach}},
+  author = {Alberto Gallina and Rainer Krenn and Marco Scharringhausen and Tadeusz Uhl and Bernd Schäfer},
+  year = {2014},
+  journal = {Journal of Field Robotics 31(1), 161–175 (online publication September 2013)},
+  doi = {10.1002/rob.21480},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.21480},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline calibration},
+  annote = {Review classification: offline calibration. Represents soil parameters as distributions, begins with priors from bevameter measurements, and updates them using single-wheel test data. Addresses uncertainty and the mismatch between plate-based calibration and actual wheel contact.}
+}
+
+@inproceedings{Matl2020InferringtheMaterial,
+  title = {{Inferring the Material Properties of Granular Media for Robotic Tasks}},
+  author = {Carolyn Matl and Yashraj Narang and Ruzena Bajcsy and Fabio Ramos and Dieter Fox},
+  year = {2020},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  doi = {10.1109/ICRA40945.2020.9197063},
+  url = {https://arxiv.org/abs/2003.08032},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline calibration},
+  annote = {Review classification: offline calibration. Infers sliding friction, rolling friction, and restitution from depth images of granular piles and rings using likelihood-free Bayesian inference. Tests whether inferred parameters predict unseen formations and robotic pouring outcomes.}
+}
+
+@article{Haeri2024Subspacegraphnetworks,
+  title = {{Subspace graph networks for real-time granular flow simulation with applications to machine-terrain interactions}},
+  author = {Amin Haeri and Daniel Holz and Krzysztof Skonieczny},
+  year = {2024},
+  journal = {Engineering Applications of Artificial Intelligence 135, 108765},
+  doi = {10.1016/j.engappai.2024.108765},
+  url = {https://www.sciencedirect.com/science/article/pii/S0952197624009230},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, measured real-time},
+  annote = {Review classification: measured real-time. Trains a graph-network simulator on high-fidelity MPM data reduced using PCA. Predicts granular particle positions and rigid-body reaction forces for excavation and wheel interactions, with real-time rollout in the tested configurations.}
+}
+
+@article{Servin2021Amultiscalemodel,
+  title = {{A multiscale model of terrain dynamics for real-time earthmoving simulation}},
+  author = {Martin Servin and Tomas Berglund and Samuel Nystedt},
+  year = {2021},
+  journal = {Advanced Modeling and Simulation in Engineering Sciences 8, article 11},
+  doi = {10.1186/s40323-021-00196-3},
+  url = {https://link.springer.com/article/10.1186/s40323-021-00196-3},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, measured real-time},
+  annote = {Review classification: measured real-time. Couples sparse voxel soil, active granular particles, and aggregate rigid bodies for real-time excavation and bulldozing. Uses offline high-resolution reference simulations and a pre-calibrated soil library to connect material properties across scales.}
+}
+
+@article{Macklin2014UnifiedParticlePhysics,
+  title = {{Unified Particle Physics for Real-Time Applications}},
+  author = {Miles Macklin and Matthias Müller and Nuttapong Chentanez and Tae-Yong Kim},
+  year = {2014},
+  journal = {ACM Transactions on Graphics 33(4), article 153},
+  doi = {10.1145/2601097.2601152},
+  url = {https://mmacklin.com/uppfrta_preprint.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, measured real-time},
+  annote = {Review classification: measured real-time. A GPU position-based particle solver unifies granular friction, fluids, rigid bodies, and deformable objects. Its sand example provides a measured real-time granular alternative to heightfield approximations.}
+}
+
+@article{Chen2025NumericalHomogenizationof,
+  title = {{Numerical Homogenization of Sand from Grain-level Simulations}},
+  author = {Yi-Lu Chen and Mickaël Ly and Chris Wojtan},
+  year = {2025},
+  journal = {ACM Transactions on Graphics 44(6), article 220, 1–23},
+  doi = {10.1145/3763344},
+  url = {https://visualcomputing.ist.ac.at/publications/2025/HomogenizedSand/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline calibration},
+  annote = {Review classification: offline calibration. Extracts effective continuum elasticity and yield behavior from simulations of contacting grains under periodic boundary conditions, then simulates those material laws with MPM. Extends the mapping to non-convex, interlocking grain shapes.}
+}
+
+@article{Stomakhin2013AMaterialPoint,
+  title = {{A Material Point Method for Snow Simulation}},
+  author = {Alexey Stomakhin and Craig Schroeder and Lawrence Chai and Joseph Teran and Andrew Selle},
+  year = {2013},
+  journal = {ACM Transactions on Graphics 32(4), article 102},
+  doi = {10.1145/2461912.2461948},
+  url = {https://www.disneyanimation.com/publications/a-material-point-method-for-snow-simulation/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline reference},
+  annote = {Review classification: offline reference. Introduces an elastoplastic MPM treatment of snow that supports compaction, fracture, and complex contact. A useful foundation for designing numerical snow references against which a reduced surface model can be evaluated.}
+}
+
+@article{Klar2016DruckerPragerElastoplasticity,
+  title = {{Drucker-Prager Elastoplasticity for Sand Animation}},
+  author = {Gergely Klár and Theodore Gast and Andre Pradhana and Chuyuan Fu and Craig Schroeder and Chenfanfu Jiang and Joseph Teran},
+  year = {2016},
+  journal = {ACM Transactions on Graphics 35(4), article 103, 1–12},
+  doi = {10.1145/2897824.2925906},
+  url = {https://math.ucdavis.edu/~jteran/papers/KGPSJT16.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper C, offline reference},
+  annote = {Review classification: offline reference. Uses Drucker–Prager elastoplasticity, MPM, and APIC transfers to simulate dry sand flow, piling, tool interactions, and contact. Provides physically interpretable material parameters and documented numerical limitations.}
+}
+
+@inproceedings{Li1993ModelingSoilRealtime,
+  title = {{Modeling Soil: Realtime Dynamic Models for Soil Slippage and Manipulation}},
+  author = {Xin Li and J. Michael Moshell},
+  year = {1993},
+  booktitle = {Proceedings of SIGGRAPH 1993, pp. 361–368},
+  doi = {10.1145/166117.166162},
+  url = {https://stars.library.ucf.edu/scopus1990/528/},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, real-time claim; historical foundation},
+  annote = {Review classification: real-time claim; historical foundation. Uses soil mechanics and volume-conserving analytic models for slippage, digging, cutting, piling and dumping. An early foundation for real-time contact-driven soil simulation.}
+}
+
+@article{Sumner1999AnimatingSandMud,
+  title = {{Animating Sand, Mud, and Snow}},
+  author = {Robert W. Sumner and James F. O'Brien and Jessica K. Hodgins},
+  year = {1999},
+  journal = {Computer Graphics Forum 18(1), pp. 17–26},
+  doi = {10.1111/1467-8659.00299},
+  url = {https://jamesobrien.com/papers/Sumner-ASM-1999-03/index.html},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, historical reference; not counted as verified real-time},
+  annote = {Review classification: historical reference; not counted as verified real-time. Models ground impressions from animated rigid-body contacts, including footprints and bicycle tracks. Five controllable parameters produce distinct sand, mud and snow responses, with footprint comparisons to observations.}
+}
+
+@inproceedings{Benes2001LayeredDataRepresentation,
+  title = {{Layered Data Representation for Visual Simulation of Terrain Erosion}},
+  author = {Bedřich Beneš and Rafael Forsbach},
+  year = {2001},
+  booktitle = {Spring Conference on Computer Graphics, pp. 80–86},
+  doi = {10.1109/SCCG.2001.945341},
+  url = {https://www.cs.purdue.edu/homes/bbenes/papers/Benes01SCCG.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, representation foundation},
+  annote = {Review classification: representation foundation. Stores stratified material layers in sampled vertical columns as a compromise between a single heightfield and a dense voxel grid. Demonstrates erosion on the representation.}
+}
+
+@inproceedings{Stava2008InteractiveTerrainModeling,
+  title = {{Interactive Terrain Modeling Using Hydraulic Erosion}},
+  author = {Ondřej Št'ava and Bedřich Beneš and Matthew Brisbin and Jaroslav Křivánek},
+  year = {2008},
+  booktitle = {Eurographics/SIGGRAPH Symposium on Computer Animation, pp. 201–210},
+  doi = {10.2312/SCA/SCA08/201-210},
+  url = {https://cs.purdue.edu/homes/bbenes/papers/Stava08SCA.pdf},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, measured interactive; workload dependent},
+  annote = {Review classification: measured interactive; workload dependent. Combines hydraulic erosion, dissolution and slippage on GPU-resident layers with distinct material properties. Supports selected tiles and exposed lower layers, establishing interactive multilayer terrain simulation.}
+}
+
+@inproceedings{Nilles2025OasisAReal,
+  title = {{Oasis: A Real-Time Hydraulic and Aeolian Erosion Simulation with Dynamic Vegetation}},
+  author = {Alexander Maximilian Nilles and Lars Günther and Stefan Müller},
+  year = {2025},
+  booktitle = {GRAPP 2025, pp. 39–52},
+  doi = {10.5220/0013112100003912},
+  url = {https://www.scitepress.org/PublicationsDetail.aspx?ID=JWwDcg51MFQ%3D&t=1},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, real-time claim; erosion rather than contact},
+  annote = {Review classification: real-time claim; erosion rather than contact. Couples hydraulic and wind erosion, moisture and vegetation on layered bedrock, soil and sand. A recent real-time multilayer-terrain precedent, with open-source implementation.}
+}
+
+@inproceedings{Nilles20243DRealTime,
+  title = {{3D Real-Time Hydraulic Erosion Simulation using Multi-Layered Heightmaps}},
+  author = {Alexander Maximilian Nilles and Lars Günther and Tobias Wagner and Stefan Müller},
+  year = {2024},
+  booktitle = {Vision, Modeling, and Visualization 2024},
+  doi = {10.2312/vmv.20241211},
+  url = {https://diglib.eg.org/items/deefa865-6a25-4463-adcd-d8de2b37507e},
+  urldate = {2026-11-06},
+  keywords = {Terrain Deformation Research, Paper A and B foundations, measured real-time simulation; erosion},
+  annote = {Review classification: measured real-time simulation; erosion. Extends heightmap hydraulic erosion to stacked columns, adding horizontal erosion and support checks. Can form overhangs and arches without a dense voxel representation.}
+}
+
